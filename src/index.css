@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --bg-main: #0a0a0a;
+    --bg-card: rgba(22, 22, 22, 0.7);
+    --bg-sidebar: #0f0f0f;
+    --accent-pink: #ff007a;
+    --accent-violet: #8b5cf6;
+    --accent-purple: #a855f7;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --glow-pink: 0 0 20px rgba(255, 0, 122, 0.3);
+    --glow-violet: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--bg-main)] text-[var(--text-primary)] font-main overflow-x-hidden;
+  }
+}
+
+.bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.grid-bg {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+}
+
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--accent-pink);
+    top: -100px;
+    right: -100px;
+}
+
+.orb-2 {
+    width: 500px;
+    height: 500px;
+    background: var(--accent-violet);
+    bottom: -150px;
+    left: -150px;
+}
